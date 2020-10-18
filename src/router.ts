@@ -7,21 +7,38 @@ import DialogDemo from './components/DialogDemo.vue';
 import TabsDemo from './components/TabsDemo.vue';
 import DocDemo from './components/DocDemo.vue';
 
+import Markdown from './components/Markdown.vue';
+import { h } from 'vue';
+
 const history = createWebHashHistory();
 export const router = createRouter({
-  history: history,
-  routes: [
-    { path: '/', component: Home },
-    {
-      path: '/doc',
-      component: Doc,
-      children: [
-        { path: '', component: DocDemo },
-        { path: 'switch', component: SwitchDemo },
-        { path: 'button', component: ButtonDemo },
-        { path: 'dialog', component: DialogDemo },
-        { path: 'tabs', component: TabsDemo },
-      ],
-    },
-  ],
+    history: history,
+    routes: [
+        { path: '/', component: Home },
+        {
+            path: '/doc',
+            component: Doc,
+            children: [
+                { path: '', component: DocDemo },
+                {
+                    path: 'intro',
+                    component: h(Markdown, { path: '../markdown/intro.md' })
+                },
+                {
+                    path: 'get-started',
+                    component: h(Markdown, {
+                        path: '../markdown/get-started.md'
+                    })
+                },
+                {
+                    path: 'install',
+                    component: h(Markdown, { path: '../markdown/install.md' })
+                },
+                { path: 'switch', component: SwitchDemo },
+                { path: 'button', component: ButtonDemo },
+                { path: 'dialog', component: DialogDemo },
+                { path: 'tabs', component: TabsDemo }
+            ]
+        }
+    ]
 });
