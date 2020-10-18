@@ -5,7 +5,8 @@
             <component :is="component" />
         </div>
         <div class="demo-actions">
-            <Button @click="toggleCode">查看代码</Button>
+            <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+            <Button @click="showCode" v-else>查看代码</Button>
         </div>
         <div class="demo-code" v-if="codeVisible">
             <pre class="language-html" v-html="html" />
@@ -39,12 +40,15 @@ export default {
         // ref()相当于data，响应式数据，直接写const无法再次赋值，写let无效
         const codeVisible = ref(false);
 
-        const toggleCode = () => (codeVisible.value = !codeVisible.value);
+        const hideCode = () => (codeVisible.value = false);
+        const showCode = () => (codeVisible.value = true);
+
         return {
             Prism,
             html,
             codeVisible,
-            toggleCode
+            hideCode,
+            showCode
         };
     }
 };
