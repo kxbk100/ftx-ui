@@ -1,23 +1,22 @@
 <template>
-    <div>
-        <router-link to="/" class="topnav">
-            <div class="logo">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-feng"></use>
-                </svg>
-            </div>
-            <ul class="menu">
-                <li>菜单1</li>
-                <li>菜单2</li>
-            </ul>
-            <svg
-                class="toggleAside"
-                @click="toggleMenu"
-                v-if="toggleMenuButtonVisible"
-            >
-                <use xlink:href="#icon-menu"></use>
+    <div class="topnav">
+        <router-link to="/" class="logo">
+            <svg class="icon">
+                <use xlink:href="#icon-feng"></use>
             </svg>
         </router-link>
+        <ul class="menu">
+            <li>
+                <router-link to="/doc">文档</router-link>
+            </li>
+        </ul>
+        <svg
+            v-if="toggleMenuButtonVisible"
+            class="toggleAside"
+            @click="toggleMenu"
+        >
+            <use xlink:href="#icon-menu"></use>
+        </svg>
     </div>
 </template>
 
