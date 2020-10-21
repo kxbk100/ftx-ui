@@ -13,14 +13,14 @@ export default {
             globals: {
                 vue: 'Vue'
             },
-            name: 'FUI',
-            file: 'dist/lib/fui.js',
+            name: 'FTXUI',
+            file: 'dist/lib/ftxui.js',
             format: 'umd',
             plugins: [terser()]
         },
         {
-            name: 'FUI',
-            file: 'dist/lib/fui.esm.js',
+            name: 'FTXUI',
+            file: 'dist/lib/ftxui.esm.js',
             format: 'es',
             plugins: [terser()]
         }

@@ -1,6 +1,8 @@
 {
-  "name": "gulu-ui",
-  "version": "0.0.0",
+  "name": "ftx-ui",
+  "version": "0.0.2",
+  "files": ["dist/lib/*"],
+  "main": "dist/lib/ftxui.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

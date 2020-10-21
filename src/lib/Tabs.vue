@@ -1,9 +1,9 @@
 <template>
-    <div class="gulu-tabs">
-        <div class="gulu-tabs-nav" ref="container">
+    <div class="ftx-tabs">
+        <div class="ftx-tabs-nav" ref="container">
             <!-- 使用v-for就要写key -->
             <div
-                class="gulu-tabs-nav-item"
+                class="ftx-tabs-nav-item"
                 v-for="(t, index) in titles"
                 :ref="
                     (el) => {
@@ -16,9 +16,9 @@
             >
                 {{ t }}
             </div>
-            <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
+            <div class="ftx-tabs-nav-indicator" ref="indicator"></div>
         </div>
-        <div class="gulu-tabs-content">
+        <div class="ftx-tabs-content">
             <!-- 虚拟节点需要用component is来展示 -->
             <!-- 用component实现一个slot -->
             <!-- 嵌套渲染插槽的时候可以这么写 -->
@@ -95,7 +95,7 @@ export const select = (title: string) => {
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
-.gulu-tabs {
+.ftx-tabs {
     &-nav {
         display: flex;
         color: $color;

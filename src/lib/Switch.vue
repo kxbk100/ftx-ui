@@ -1,7 +1,7 @@
 <template>
   <button
-    class="gulu-switch"
-    :class="{ 'gulu-checked': value }"
+    class="ftx-switch"
+    :class="{ 'ftx-checked': value }"
     @click="toggle"
   >
     <span></span>
@@ -26,7 +26,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-.gulu-switch {
+.ftx-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -43,7 +43,7 @@ $h2: $h - 4px;
     border-radius: $h2 / 2;
     transition: all 250ms;
   }
-  &.gulu-checked {
+  &.ftx-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -57,7 +57,7 @@ $h2: $h - 4px;
       width: $h2 + 4px;
     }
   }
-  &.gulu-checked:active {
+  &.ftx-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;

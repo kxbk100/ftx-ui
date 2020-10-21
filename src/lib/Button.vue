@@ -1,6 +1,6 @@
 <template>
-  <button class="gulu-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="gulu-loadingIndicator"></span>
+  <button class="ftx-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="ftx-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -35,9 +35,9 @@ export default {
     const { theme, size, level } = props;
     const classes = computed(() => {
       return {
-        [`gulu-theme-${theme}`]: theme,
-        [`gulu-size-${size}`]: size,
-        [`gulu-level-${level}`]: level,
+        [`ftx-theme-${theme}`]: theme,
+        [`ftx-size-${size}`]: size,
+        [`ftx-level-${level}`]: level,
       };
     });
     return { classes };
@@ -53,7 +53,7 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-.gulu-button {
+.ftx-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -82,7 +82,7 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.gulu-theme-link {
+  &.ftx-theme-link {
     border-color: transparent;
     background-color: transparent;
     box-shadow: none;
@@ -92,7 +92,7 @@ $grey: grey;
       color: lighten($blue, 10%);
     }
   }
-  &.gulu-theme-text {
+  &.ftx-theme-text {
     border-color: transparent;
     background-color: transparent;
     box-shadow: none;
@@ -102,18 +102,18 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-  &.gulu-size-big {
+  &.ftx-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.gulu-size-small {
+  &.ftx-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-  &.gulu-theme-button {
-    &.gulu-level-main {
+  &.ftx-theme-button {
+    &.ftx-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -123,7 +123,7 @@ $grey: grey;
         border-color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.ftx-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -134,8 +134,8 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-link {
-    &.gulu-level-danger {
+  &.ftx-theme-link {
+    &.ftx-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -143,15 +143,15 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-text {
-    &.gulu-level-main {
+  &.ftx-theme-text {
+    &.ftx-level-main {
       color: $blue;
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.ftx-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -159,7 +159,7 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-button {
+  &.ftx-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -168,14 +168,14 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-link,
-  &.gulu-theme-text {
+  &.ftx-theme-link,
+  &.ftx-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .gulu-loadingIndicator {
+  > .ftx-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -184,10 +184,10 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: gulu-spin 1s infinite linear;
+    animation: ftx-spin 1s infinite linear;
   }
 }
-@keyframes gulu-spin {
+@keyframes ftx-spin {
   0% {
     transform: rotate(0deg);
   }
